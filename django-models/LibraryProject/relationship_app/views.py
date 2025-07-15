@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.detail import DetailView
 from .models import Book, Library
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import redirect, render
 from django.contrib.auth import login
 from django.views import View
@@ -34,9 +33,4 @@ class RegisterView(View):
             return redirect('list_books')
         return render(request, 'relationship_app/register.html', {'form': form})
 
-# Custom login/logout using built-in views
-class CustomLoginView(LoginView):
-    template_name = 'relationship_app/login.html'
 
-class CustomLogoutView(LogoutView):
-    template_name = 'relationship_app/logout.html'
