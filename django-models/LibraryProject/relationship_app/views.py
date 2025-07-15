@@ -9,6 +9,8 @@ def list_books_view(request):
 
 # Class-based view: library detail showing all books in the library
 class LibraryDetailView(DetailView):
+    from .models import Library
+    
     model = Library
     template_name = 'relationship_app/library_detail.html'
     context_object_name = 'library'
