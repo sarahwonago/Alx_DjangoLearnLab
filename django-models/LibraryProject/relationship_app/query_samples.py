@@ -29,11 +29,11 @@ def list_books_in_library(library_name):
     except Library.DoesNotExist:
         print(f"No library found with name '{library_name}'")
 
-# 3. Retrieve the librarian for a library
+# 3. Retrieve the librarian for a library (using forward lookup)
 def get_librarian_for_library(library_name):
     try:
         library = Library.objects.get(name=library_name)
-        librarian = library.librarian
+        librarian = Librarian.objects.get(library=library)
         print(f"Librarian for {library.name} library: {librarian.name}")
     except Library.DoesNotExist:
         print(f"No library found with name '{library_name}'")
