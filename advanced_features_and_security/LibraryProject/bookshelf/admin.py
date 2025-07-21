@@ -4,7 +4,6 @@ from .models import CustomUser, Book
 from django.utils.translation import gettext_lazy as _
 
 
-@admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
     fieldsets = UserAdmin.fieldsets + (
@@ -22,6 +21,9 @@ class CustomUserAdmin(UserAdmin):
         "is_staff",
     )
     search_fields = ("username", "email", "first_name", "last_name")
+
+
+admin.site.register(CustomUser, CustomUserAdmin)
 
 
 @admin.register(Book)
