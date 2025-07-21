@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render, redirect
 from .models import Book
-from .forms import SearchForm, ExampleForm
+from .forms import ExampleForm, SearchForm
 
 
 @permission_required("bookshelf.view_book", raise_exception=True)
