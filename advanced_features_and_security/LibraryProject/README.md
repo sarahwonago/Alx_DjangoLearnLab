@@ -61,3 +61,29 @@ Defined in `Book` model:
 - `book_create`: requires `can_create`
 - `book_edit`: requires `can_edit`
 - `book_delete`: requires `can_delete`
+
+# Security Measures in LibraryProject
+
+## settings.py
+
+- DEBUG=False for production
+- SECURE_XSS_FILTER, SECURE_CONTENT_TYPE_NOSNIFF, X_FRAME_OPTIONS added
+- CSRF_COOKIE_SECURE and SESSION_COOKIE_SECURE enabled
+
+## Templates
+
+- All forms use `{% csrf_token %}` to prevent CSRF attacks
+
+## Views
+
+- Raw SQL avoided
+- Django ORM used with proper form validation to prevent SQL injection
+
+## CSP
+
+- django-csp middleware configured to restrict content loading to trusted sources
+
+## Testing
+
+- Forms tested for CSRF protection
+- Manual tests confirm SQL injection is blocked
