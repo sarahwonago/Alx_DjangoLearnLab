@@ -1,3 +1,29 @@
+# Permissions and Groups Setup Guide
+
+## Custom Permissions
+
+Defined in `Book` model:
+
+- can_view
+- can_create
+- can_edit
+- can_delete
+
+## Groups and Assigned Permissions
+
+| Group   | Permissions                                |
+| ------- | ------------------------------------------ |
+| Viewers | can_view                                   |
+| Editors | can_view, can_create, can_edit             |
+| Admins  | can_view, can_create, can_edit, can_delete |
+
+## View Protection
+
+- `book_list`: requires `can_view`
+- `book_create`: requires `can_create`
+- `book_edit`: requires `can_edit`
+- `book_delete`: requires `can_delete`
+
 # CRUD Operations for Book Model in Django Shell
 
 This document demonstrates how to create, retrieve, update, and delete a `Book` instance using Django’s ORM via the Django shell.
