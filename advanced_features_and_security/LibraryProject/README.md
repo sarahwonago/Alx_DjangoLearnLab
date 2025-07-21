@@ -35,3 +35,29 @@ By the end of this project, you will be able to:
 
 - Configure Django to handle secure HTTPS connections and enforce HTTPS redirects.
 - Adjust settings for secure cookies and implement secure headers to protect against various attacks.
+
+# Permissions and Groups Setup Guide
+
+## Custom Permissions
+
+Defined in `Book` model:
+
+- can_view
+- can_create
+- can_edit
+- can_delete
+
+## Groups and Assigned Permissions
+
+| Group   | Permissions                                |
+| ------- | ------------------------------------------ |
+| Viewers | can_view                                   |
+| Editors | can_view, can_create, can_edit             |
+| Admins  | can_view, can_create, can_edit, can_delete |
+
+## View Protection
+
+- `book_list`: requires `can_view`
+- `book_create`: requires `can_create`
+- `book_edit`: requires `can_edit`
+- `book_delete`: requires `can_delete`
