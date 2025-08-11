@@ -1,0 +1,6 @@
+body { font-family: sans-serif; margin: 2rem; }
+nav a { margin-right: 1rem; }
+.messages { list-style: none; padding: 0; }
+.messages li { margin: 0.5rem 0; padding: 0.5rem; border-radius: 4px; }
+.messages li.success { background: #e0ffe0; }
+.messages li.error { background: #ffe0e0; }
