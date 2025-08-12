@@ -28,3 +28,10 @@ Run `python manage.py test blog` to execute the included unit tests.
 ## Notes
 
 - Templates are under `blog/templates/blog`.
+
+## Comment Feature
+
+- Authenticated users can add, edit, and delete their own comments.
+- Comments are displayed under each post in reverse chronological order.
+- Only the author of a comment can modify or delete it.
+- Anonymous users can read comments but must log in to comment.
