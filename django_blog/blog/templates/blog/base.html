@@ -11,6 +11,11 @@
     <nav>
       <a href="{% url 'post-list' %}">Posts</a>
       <a href="{% url 'home' %}">Home</a>
+      <form method="get" action="{% url 'search_posts' %}">
+    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
+
       {% if user.is_authenticated %}
         <a href="{% url 'post-create' %}">New Post</a>
         <a href="{% url 'profile' %}">Profile</a>

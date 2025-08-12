@@ -5,6 +5,8 @@ from django.db.models.signals import post_save
 from django.urls import reverse
 from django.utils import timezone
 
+from taggit.managers import TaggableManager
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -15,6 +17,8 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name="posts",
     )
+    # Tagging
+    tags = TaggableManager()
 
     class Meta:
         ordering = ["-published_date"]
