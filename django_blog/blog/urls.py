@@ -22,7 +22,7 @@ urlpatterns = [
     path("post/<int:pk>/update/", views.PostUpdateView.as_view(), name="post-update"),
     path("post/<int:pk>/delete/", views.PostDeleteView.as_view(), name="post-delete"),
     path(
-        "posts/<int:post_id>/comments/new/",
+        "post/<int:pk>/comments/new/",
         views.CommentCreateView.as_view(),
         name="add_comment",
     ),
